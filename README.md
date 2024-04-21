@@ -1,8 +1,8 @@
 # Filament - Vite Hot Reloading
 
-For developers, time and efficiency are of great importance. Therefore, understanding how to get started with the concept of hot reloading using powerful tools like Vite.js when developing backends with Laravel and Filament can speed up development processes and make them smoother. Vite is a fast fronted build tool that significantly improves the development experience. When combined with Laravel, it allows the browser to automatically reflect these changes in the interface as soon as code changes are made.
+For developers, time and productivity are of great importance. Vite is a tool that offers fast development for modern web applications. Hot reloading is a powerful feature used to quickly view changes made to an application.
 
-In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure.
+This guide demonstrates how to integrate the Vite tool and enable the hot reloading feature when developing a web application using Laravel Filament.
 
 ## 1. Laravel Vite Plugin
 
@@ -35,8 +35,8 @@ In this guide, I will explain how hot reloading can be used in web applications,
            npm install --save-dev @defstudio/vite-livewire-plugin
 
            // resources/js/app.js
+           
            import './bootstrap';
-           // eklentiyi çağırıyoruz aşağıdaki satılar ile
            import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
            livewire_hot_reload();
         
