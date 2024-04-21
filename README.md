@@ -31,21 +31,18 @@ This plugin refreshes the page every time a change is made. It does not refresh 
     1. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
 This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
-        ```bash
+
         npm install --save-dev @defstudio/vite-livewire-plugin
-        ```
-        
-        ```jsx
+
         // resources/js/app.js
         import './bootstrap';
         // eklentiyi çağırıyoruz aşağıdaki satılar ile
         import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
         livewire_hot_reload();
-        ```
+        
         
     2. **vite.config.js Hot Reloading Entegrasyonu**
         
-        ```jsx
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin';
         import livewire from '@defstudio/vite-livewire-plugin'; // import plugin
@@ -69,7 +66,6 @@ This plugin refreshes the component or any element on the page every time a chan
                 }),
             ],
         })
-        ```
         
     
     1. **Filament Integration**
