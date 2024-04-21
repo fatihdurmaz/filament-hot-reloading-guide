@@ -8,7 +8,8 @@ In this guide, I will explain how hot reloading can be used in web applications,
 1. **Default Laravel Vite Plugin**
     1. **vite.config.js Hot Reloading Integration**
         
-This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.        
+This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
+
         ```jsx
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin'
