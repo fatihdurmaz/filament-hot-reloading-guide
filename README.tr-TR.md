@@ -1,10 +1,8 @@
 # Filament - Vite Hot Reloading
 
-> Geliştiriciler için zaman ve verimlilik büyük önem taşır. Bu nedenle, Laravel ve Filament ile backend geliştirirken Vite.js gibi güçlü araçları kullanarak hot reloading konseptine nasıl başlanacağını anlamak, geliştirme süreçlerini hızlandırabilir ve daha akıcı hale getirebilir.
-Vite, geliştirme deneyimini önemli ölçüde artıran hızlı bir fronted yapı aracıdır. Laravel ile birleştirildiğinde, kod değişiklikleri yapıldığı anda tarayıcının otomatik olarak bu değişiklikleri arayüze yansıtmasını sağlar.
-> 
+Geliştiriciler için zaman ve verimlilik büyük önem taşır. Vite, modern web uygulamaları için hızlı bir geliştirme sunan bir araçtır. Hot reloading, uygulama üzerinde yapılan değişiklikleri hızlı bir şekilde görüntülemek için kullanılan güçlü bir özelliktir.
 
-Bu rehberde, Laravel'in sağladığı güçlü sunucu taraflı yeteneklerini, Filament paketinin form, tablo, admin panel ve daha birçok bileşenlerini ve Vite.js'in hızlı, modern bir yapı oluşturma potansiyelini bir araya getirerek, web uygulamalarında hot reloading'in nasıl kullanılabileceğini açıklayacağım.
+Bu Rehber, Laravel Filament kullanarak bir web uygulaması geliştirirken Vite aracını nasıl entegre edeceğinizi ve hot reloading özelliğini nasıl etkinleştireceğinizi göstermektedir.
 
 1. **Varsayılan Laravel Vite Eklentisi**
     1. **vite.config.js Hot Reloading Entegrasyonu**
