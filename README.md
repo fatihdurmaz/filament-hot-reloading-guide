@@ -1,16 +1,14 @@
 # Filament - Vite Hot Reloading
 
-> Geliştiriciler için zaman ve verimlilik büyük önem taşır. Bu nedenle, Laravel ve Filament ile backend geliştirirken Vite.js gibi güçlü araçları kullanarak hot reloading konseptine nasıl başlanacağını anlamak, geliştirme süreçlerini hızlandırabilir ve daha akıcı hale getirebilir.
-Vite, geliştirme deneyimini önemli ölçüde artıran hızlı bir fronted yapı aracıdır. Laravel ile birleştirildiğinde, kod değişiklikleri yapıldığı anda tarayıcının otomatik olarak bu değişiklikleri arayüze yansıtmasını sağlar.
+> For developers, time and efficiency are of great importance. Therefore, understanding how to get started with the concept of hot reloading using powerful tools like Vite.js when developing backends with Laravel and Filament can speed up development processes and make them smoother.
+Vite is a fast fronted build tool that significantly improves the development experience. When combined with Laravel, it allows the browser to automatically reflect these changes in the interface as soon as code changes are made.
 > 
-
-Bu rehberde, Laravel'in sağladığı güçlü sunucu taraflı yeteneklerini, Filament paketinin form, tablo, admin panel ve daha birçok bileşenlerini ve Vite.js'in hızlı, modern bir yapı oluşturma potansiyelini bir araya getirerek, web uygulamalarında hot reloading'in nasıl kullanılabileceğini açıklayacağım.
+In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure. .
 
 1. **Varsayılan Laravel Vite Eklentisi**
     1. **vite.config.js Hot Reloading Entegrasyonu**
         
-        Bu eklenti her değişiklik yapıldığında sayfayı yeniler. Değişiklik yapılan bileşen veya sayfadaki herhangi bir elementin kendisini yenilemez.
-        
+This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.        
         ```jsx
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin'
@@ -33,8 +31,7 @@ Bu rehberde, Laravel'in sağladığı güçlü sunucu taraflı yeteneklerini, Fi
 2. **Vite Livewire Eklentisi**
     1. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) eklentisinin kurulması ve app.js dosyasında çağrılması (Önerilen)**
         
-        Bu eklenti her değişiklik yapıldığında bileşen veya sayfadaki herhangi bir elementin kendisini yeniler. Sayfanın tamamının yenilenmesine gerek duymaz.
-        
+This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
         ```bash
         npm install --save-dev @defstudio/vite-livewire-plugin
         ```
@@ -78,8 +75,7 @@ Bu rehberde, Laravel'in sağladığı güçlü sunucu taraflı yeteneklerini, Fi
     
     1. **Filament Entegrasyonu**
         
-        Değişikliklerin Vite tarafından takip edilebilmesi için app.js dosyasının Filament paneline eklenmesi gereklidir. 2 şekilde yapabiliriz.
-        
+In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
         1. **AppServiceProvider → register() yönteminde**
             
             ```php
@@ -125,15 +121,14 @@ Bu rehberde, Laravel'in sağladığı güçlü sunucu taraflı yeteneklerini, Fi
             ```
             
 
-> Yukarıdaki adımlar tamamlandıktan sonra Vite aracını ve Laravel artisan sunucusunu çalıştırarak hot reloading özelliğin aktif edildiğini görmüş olacağız.
+> After the above steps are completed, we will see that the hot reloading feature has been activated by running the Vite tool and Laravel artisan server.
 > 
 
 ```bash
-npm run dev // vite sunucusunun çalıştırılması
-php artisan serve // Laravel artisan sunucusunun çalıştırılması
+npm run dev // vite server run
+php artisan serve // Laravel artisan server run
 ```
 
 <aside>
-💡 Herhangi bir sorunla karşılaşmadığınız halde hot reloading çalışmıyorsa `php artisan optimize` komutunu çalıştırarak Laravel uygulamasını optimize edip sorunu çözebilirsiniz.
-
+💡 If you do not encounter any problems but hot reloading is not working, you can optimize the Laravel application and solve the problem by running the 'php artisan optimize' command.
 </aside>
