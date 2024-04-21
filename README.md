@@ -5,8 +5,8 @@ Vite is a fast fronted build tool that significantly improves the development ex
 > 
 In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure. .
 
-1. **Varsayılan Laravel Vite Eklentisi**
-    1. **vite.config.js Hot Reloading Entegrasyonu**
+1. **Default Laravel Vite Plugin**
+    1. **vite.config.js Hot Reloading Integration**
         
 This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.        
         ```jsx
@@ -28,8 +28,8 @@ This plugin refreshes the page every time a change is made. It does not refresh 
         ```
         
     
-2. **Vite Livewire Eklentisi**
-    1. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) eklentisinin kurulması ve app.js dosyasında çağrılması (Önerilen)**
+2. **Vite Livewire Plugin**
+    1. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
 This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
         ```bash
@@ -49,7 +49,7 @@ This plugin refreshes the component or any element on the page every time a chan
         ```jsx
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin';
-        import livewire from '@defstudio/vite-livewire-plugin'; // yüklediğimiz eklentiyi import ediyoruz.
+        import livewire from '@defstudio/vite-livewire-plugin'; // import plugin
         
         export default defineConfig({
             plugins: [
@@ -63,9 +63,9 @@ This plugin refreshes the component or any element on the page every time a chan
         
                 livewire({
                     refresh: [
-                        ...refreshPaths, // app.js çağrıldığı her yerdeki değişiklikler izleniyor
-                        'app/Http/Livewire/**', // LiveWire bileşenlerini izlemek için (varsa)
-                        'app/Custom/Path/**', // vite aracının takip etmesini istediğiniz dosyaların yolunu gösterebilirsiniz.
+                        ...refreshPaths, // Tracking changes wherever app.js is called
+                        'app/Http/Livewire/**', // To monitor LiveWire components (if applicable)
+                        'app/Custom/Path/**', // You can show the path to the files you want the vite tool to follow.
                     ]
                 }),
             ],
@@ -73,10 +73,10 @@ This plugin refreshes the component or any element on the page every time a chan
         ```
         
     
-    1. **Filament Entegrasyonu**
+    1. **Filament Integration**
         
 In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
-        1. **AppServiceProvider → register() yönteminde**
+        1. **AppServiceProvider → register() function**
             
             ```php
             use Filament\Support\Facades\FilamentView;
@@ -88,7 +88,7 @@ In order for the changes to be followed by Vite, the app.js file must be added t
             }
             ```
             
-        2. **AdminPanelProvider → renderHook() yönteminde**
+        2. **AdminPanelProvider → renderHook() function**
             
             ```php
             <?php
