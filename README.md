@@ -10,7 +10,6 @@ In this guide, I will explain how hot reloading can be used in web applications,
         
 This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
 
-        ```jsx
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin'
         
@@ -26,7 +25,6 @@ This plugin refreshes the page every time a change is made. It does not refresh 
                 }),
             ],
         });
-        ```
         
     
 2. **Vite Livewire Plugin**
