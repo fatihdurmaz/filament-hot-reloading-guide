@@ -6,7 +6,7 @@
 In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure. .
 
 1. **Default Laravel Vite Plugin**
-    1. **vite.config.js Hot Reloading Integration**
+    a. **vite.config.js Hot Reloading Integration**
         
 This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
 
@@ -25,10 +25,9 @@ This plugin refreshes the page every time a change is made. It does not refresh 
                 }),
             ],
         });
-        
     
 2. **Vite Livewire Plugin**
-    1. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
+a. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
 This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
 
@@ -40,8 +39,7 @@ This plugin refreshes the component or any element on the page every time a chan
         import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
         livewire_hot_reload();
         
-        
-    2. **vite.config.js Hot Reloading Entegrasyonu**
+b. **vite.config.js Hot Reloading Entegrasyonu**
         
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin';
@@ -68,7 +66,7 @@ This plugin refreshes the component or any element on the page every time a chan
         })
         
     
-    1. **Filament Integration**
+3. **Filament Integration**
         
 In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
         1. **AppServiceProvider → register() function**
