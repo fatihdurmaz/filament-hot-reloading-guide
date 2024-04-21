@@ -27,9 +27,9 @@ Bu Rehber, Laravel Filament kullanarak bir web uygulaması geliştirirken Vite a
         
     
 ### b. Vite Livewire Eklentisi (Opsiyonel - Önerilen)
-#### i. [vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) eklentisinin kurulması ve app.js dosyasında çağrılması
-
 *Bu eklenti her değişiklik yapıldığında bileşen veya sayfadaki herhangi bir elementin kendisini yeniler. Sayfanın tamamının yenilenmesine gerek duymaz.*
+
+#### i. [vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) eklentisinin kurulması ve app.js dosyasında çağrılması
         
     npm install --save-dev @defstudio/vite-livewire-plugin
     
@@ -39,7 +39,7 @@ Bu Rehber, Laravel Filament kullanarak bir web uygulaması geliştirirken Vite a
     import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
     livewire_hot_reload();
         
-#### ii.vite.config.js Hot Reloading Entegrasyonu
+#### ii. vite.config.js Hot Reloading Entegrasyonu
         
     import { defineConfig } from 'vite';
     import laravel, { refreshPaths } from 'laravel-vite-plugin';
@@ -65,8 +65,7 @@ Bu Rehber, Laravel Filament kullanarak bir web uygulaması geliştirirken Vite a
         ],
     })
         
-    
-## 2.Filament Entegrasyonu
+## 2. Filament Entegrasyonu
 
 *Değişikliklerin Vite tarafından takip edilebilmesi için app.js dosyasının Filament paneline eklenmesi gereklidir. 2 şekilde yapabiliriz.*
         
@@ -111,15 +110,11 @@ Bu Rehber, Laravel Filament kullanarak bir web uygulaması geliştirirken Vite a
     }            
 
 > Yukarıdaki adımlar tamamlandıktan sonra Vite aracını ve Laravel artisan sunucusunu çalıştırarak hot reloading özelliğin aktif edildiğini görmüş olacağız.
-> 
 
-```bash
-npm run dev // vite sunucusunun çalıştırılması
-php artisan serve // Laravel artisan sunucusunun çalıştırılması
-```
+        npm run dev // vite sunucusunun çalıştırılması
+        php artisan serve // Laravel artisan sunucusunun çalıştırılması
 
 <aside>
 💡 Herhangi bir sorunla karşılaşmadığınız halde hot reloading çalışmıyorsa `php artisan optimize` komutunu çalıştırarak Laravel uygulamasını optimize edip sorunu çözebilirsiniz.
 
 </aside>
-
