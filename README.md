@@ -8,39 +8,38 @@ In this guide, I will explain how hot reloading can be used in web applications,
 1. **Default Laravel Vite Plugin**
     a. **vite.config.js Hot Reloading Integration**
         
-This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
+        This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
 
-        import { defineConfig } from 'vite';
-        import laravel, { refreshPaths } from 'laravel-vite-plugin'
-        
-        export default defineConfig({
-            plugins: [
-                laravel({
-                    input: ['resources/css/app.css', 'resources/js/app.js'],
-                    refresh: [
-                        ...refreshPaths,
-                        'app/Http/Livewire/**', // Custom Livewire components
-                        'app/Filament/**', // Filament Resources
-                    ],
-                }),
-            ],
-        });
+            import { defineConfig } from 'vite';
+            import laravel, { refreshPaths } from 'laravel-vite-plugin'
+            
+            export default defineConfig({
+                plugins: [
+                    laravel({
+                        input: ['resources/css/app.css', 'resources/js/app.js'],
+                        refresh: [
+                            ...refreshPaths,
+                            'app/Http/Livewire/**', // Custom Livewire components
+                            'app/Filament/**', // Filament Resources
+                        ],
+                    }),
+                ],
+            });
     
 2. **Vite Livewire Plugin**
-
-a. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
+    a. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
-This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
+        This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
 
-        npm install --save-dev @defstudio/vite-livewire-plugin
+            npm install --save-dev @defstudio/vite-livewire-plugin
 
-        // resources/js/app.js
-        import './bootstrap';
-        // eklentiyi çağırıyoruz aşağıdaki satılar ile
-        import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
-        livewire_hot_reload();
+            // resources/js/app.js
+            import './bootstrap';
+            // eklentiyi çağırıyoruz aşağıdaki satılar ile
+            import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
+            livewire_hot_reload();
         
-b. **vite.config.js Hot Reloading Entegrasyonu**
+    b. **vite.config.js Hot Reloading Integration**
         
         import { defineConfig } from 'vite';
         import laravel, { refreshPaths } from 'laravel-vite-plugin';
@@ -69,8 +68,8 @@ b. **vite.config.js Hot Reloading Entegrasyonu**
     
 3. **Filament Integration**
         
-In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
-a. **AppServiceProvider → register() function**
+    In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
+    a. **AppServiceProvider → register() function**
             
             ```php
             use Filament\Support\Facades\FilamentView;
@@ -82,7 +81,7 @@ a. **AppServiceProvider → register() function**
             }
             ```
             
-b. **AdminPanelProvider → renderHook() function**
+    b. **AdminPanelProvider → renderHook() function**
             
             ```php
             <?php
