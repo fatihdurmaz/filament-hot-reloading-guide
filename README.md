@@ -27,6 +27,7 @@ This plugin refreshes the page every time a change is made. It does not refresh 
         });
     
 2. **Vite Livewire Plugin**
+
 a. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
 This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
@@ -69,7 +70,7 @@ b. **vite.config.js Hot Reloading Entegrasyonu**
 3. **Filament Integration**
         
 In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
-        1. **AppServiceProvider → register() function**
+a. **AppServiceProvider → register() function**
             
             ```php
             use Filament\Support\Facades\FilamentView;
@@ -81,7 +82,7 @@ In order for the changes to be followed by Vite, the app.js file must be added t
             }
             ```
             
-        2. **AdminPanelProvider → renderHook() function**
+b. **AdminPanelProvider → renderHook() function**
             
             ```php
             <?php
