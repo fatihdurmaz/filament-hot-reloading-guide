@@ -29,15 +29,15 @@ In this guide, I will explain how hot reloading can be used in web applications,
 2. **Vite Livewire Plugin**
     a. **[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)**
         
-        This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.        
+        This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.
 
-            npm install --save-dev @defstudio/vite-livewire-plugin
+           npm install --save-dev @defstudio/vite-livewire-plugin
 
-            // resources/js/app.js
-            import './bootstrap';
-            // eklentiyi çağırıyoruz aşağıdaki satılar ile
-            import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
-            livewire_hot_reload();
+           // resources/js/app.js
+           import './bootstrap';
+           // eklentiyi çağırıyoruz aşağıdaki satılar ile
+           import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
+           livewire_hot_reload();
         
     b. **vite.config.js Hot Reloading Integration**
         
@@ -66,12 +66,12 @@ In this guide, I will explain how hot reloading can be used in web applications,
         })
         
     
-3. **Filament Integration**
+4. **Filament Integration**
         
-    In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.        
+    In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.
+   
     a. **AppServiceProvider → register() function**
             
-            ```php
             use Filament\Support\Facades\FilamentView;
             use Illuminate\Support\Facades\Blade;
             
@@ -111,16 +111,13 @@ In this guide, I will explain how hot reloading can be used in web applications,
             						...
                 }
             }
-            ```
             
 
 > After the above steps are completed, we will see that the hot reloading feature has been activated by running the Vite tool and Laravel artisan server.
 > 
 
-```bash
 npm run dev // vite server run
 php artisan serve // Laravel artisan server run
-```
 
 <aside>
 💡 If you do not encounter any problems but hot reloading is not working, you can optimize the Laravel application and solve the problem by running the 'php artisan optimize' command.
