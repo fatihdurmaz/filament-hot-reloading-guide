@@ -2,13 +2,13 @@
 
 For developers, time and efficiency are of great importance. Therefore, understanding how to get started with the concept of hot reloading using powerful tools like Vite.js when developing backends with Laravel and Filament can speed up development processes and make them smoother. Vite is a fast fronted build tool that significantly improves the development experience. When combined with Laravel, it allows the browser to automatically reflect these changes in the interface as soon as code changes are made.
 
-In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure. .
+In this guide, I will explain how hot reloading can be used in web applications, combining the powerful server-side capabilities provided by Laravel, the form, table, admin panel and many other components of the Filament package, and the potential of Vite.js to create a fast, modern structure.
 
 ## 1. Laravel Vite Plugin
 
 ### a. vite.config.js Hot Reloading Integration (Optional) 
 
-This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.
+*This plugin refreshes the page every time a change is made. It does not refresh the modified component or any element on the page.*
 
 
         import { defineConfig } from 'vite';
@@ -28,11 +28,10 @@ This plugin refreshes the page every time a change is made. It does not refresh 
         });
         
 ### b. Vite Livewire Plugin (Optional)
+*This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.*
 
 #### i.[vite-livewire-plugin](https://github.com/defstudio/vite-livewire-plugin) installing the plugin and calling it in the app.js file (Recommented)
         
-*This plugin refreshes the component or any element on the page every time a change is made. There is no need to refresh the entire page.*
-
            npm install --save-dev @defstudio/vite-livewire-plugin
 
            // resources/js/app.js
@@ -69,7 +68,7 @@ This plugin refreshes the page every time a change is made. It does not refresh 
         
 ## 2. Filament Integration
 
-In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.
+*In order for the changes to be followed by Vite, the app.js file must be added to the Filament panel. We can do it in 2 ways.*
    
 ### a. AppServiceProvider → register() function
             
